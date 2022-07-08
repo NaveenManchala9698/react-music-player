@@ -28,7 +28,8 @@ function Album() {
         if (response.ok) {
           let album = await response.json();
           setAlbum(album);
-          setSongs(album.tracks.data);
+           
+          setSongs(album.tracks.data.map((song)=>{return {title:song.title, duration:song.duration, cover:album.cover}}));
         }
       } catch (exception) {
         console.log(exception);

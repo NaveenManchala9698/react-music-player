@@ -1,14 +1,25 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 
+import { useSelector } from "react-redux/es/exports";
 
-const Player = () => (
+
+
+/* const mapStateToProps = (state) => {
+  return{playerSong: state.playerSongReducer.PlayerSong}
+} */
+
+
+const Player = () => {
+
+  const playerSong = useSelector((state) => state.playerSongReducer.PlayerSong)
+  return (
   <div className="container-fluid fixed-bottom bg-container pt-1">
     <Row>
         <div className="col-lg-10 offset-lg-2">
         <Col md={12}>
           <div className="col-md-2">
-              <h5 className="text-light">Naveen</h5>
+              <h5 className="text-light">{playerSong.title}</h5>
             </div>
         </Col>
           <Row>
@@ -49,6 +60,6 @@ const Player = () => (
       
     </Row>
   </div>
-);
+)};
 
 export default Player;

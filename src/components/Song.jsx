@@ -1,12 +1,12 @@
 import React from "react";
 import { Heart, HeartFill } from 'react-bootstrap-icons'
 import { useDispatch, useSelector } from "react-redux";
-import { addFavourite, removeFavourite } from "../redux/actions";
+import { addFavourite, playerSong, removeFavourite } from "../redux/actions";
 
 
 const Song = ({ track }) => {
 
-  const favourites = useSelector((state) => state.favourites)
+  const favourites = useSelector((state) => state.favouritesReducer.favourites)
 
   const dispatch = useDispatch()
 
@@ -18,7 +18,7 @@ const Song = ({ track }) => {
   }
 
   return (
-    <div className="py-3 trackHover">
+    <div className="py-3 trackHover" onClick={() => dispatch(playerSong(track))}>
       <span className="heart" style={{ color: "white" }}>
         {isFav ?
           (<HeartFill color="green" onClick={toggleFav}/>)

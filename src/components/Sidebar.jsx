@@ -64,7 +64,7 @@ const Sidebar = ({ search }) => {
                         style={{ marginBottom: "4%" }}
                       >
                         <button
-                          className="btn btn-outline-secondary btn-sm"
+                          className="btn btn-outline-secondary btn-sm search-btn"
                           type="button"
                           id="button-addon1"
                           onClick={() => search(searchInput)}

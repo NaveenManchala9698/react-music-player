@@ -18,6 +18,7 @@ export const favouritesReducer = (state = initialState, action) => {
         ...state,
         favourites: state.favourites.filter((song) => song !== payload),
       };
+
     default:
       return state;
   }

@@ -44,6 +44,9 @@ ul {
   padding-left: 3px;
 }
 
+.search-btn:hover {
+  background-color: rgb(60, 211, 60) !important;
+}
 .nav-btn {
   display: flex;
   flex-direction: column;
